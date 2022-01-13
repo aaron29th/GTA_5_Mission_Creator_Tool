@@ -28,59 +28,63 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.button12 = new System.Windows.Forms.Button();
-			this.button13 = new System.Windows.Forms.Button();
-			this.button11 = new System.Windows.Forms.Button();
-			this.button10 = new System.Windows.Forms.Button();
+			this.descriptionSetBtn = new System.Windows.Forms.Button();
+			this.descriptionGetBtn = new System.Windows.Forms.Button();
+			this.titleSetBtn = new System.Windows.Forms.Button();
+			this.titleGetBtn = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.textBox7 = new System.Windows.Forms.TextBox();
-			this.textBox6 = new System.Windows.Forms.TextBox();
+			this.descriptionTextbox = new System.Windows.Forms.TextBox();
+			this.titleTextbox = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// button12
+			// descriptionSetBtn
 			// 
-			this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button12.Location = new System.Drawing.Point(588, 50);
-			this.button12.Name = "button12";
-			this.button12.Size = new System.Drawing.Size(41, 30);
-			this.button12.TabIndex = 23;
-			this.button12.Text = "Set";
-			this.button12.UseVisualStyleBackColor = true;
+			this.descriptionSetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.descriptionSetBtn.Location = new System.Drawing.Point(588, 50);
+			this.descriptionSetBtn.Name = "descriptionSetBtn";
+			this.descriptionSetBtn.Size = new System.Drawing.Size(41, 30);
+			this.descriptionSetBtn.TabIndex = 23;
+			this.descriptionSetBtn.Text = "Set";
+			this.descriptionSetBtn.UseVisualStyleBackColor = true;
+			this.descriptionSetBtn.Click += new System.EventHandler(this.descriptionSetBtn_Click);
 			// 
-			// button13
+			// descriptionGetBtn
 			// 
-			this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button13.Location = new System.Drawing.Point(588, 14);
-			this.button13.Name = "button13";
-			this.button13.Size = new System.Drawing.Size(41, 30);
-			this.button13.TabIndex = 22;
-			this.button13.Text = "Get";
-			this.button13.UseVisualStyleBackColor = true;
+			this.descriptionGetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.descriptionGetBtn.Location = new System.Drawing.Point(588, 14);
+			this.descriptionGetBtn.Name = "descriptionGetBtn";
+			this.descriptionGetBtn.Size = new System.Drawing.Size(41, 30);
+			this.descriptionGetBtn.TabIndex = 22;
+			this.descriptionGetBtn.Text = "Get";
+			this.descriptionGetBtn.UseVisualStyleBackColor = true;
+			this.descriptionGetBtn.Click += new System.EventHandler(this.descriptionGetBtn_Click);
 			// 
-			// button11
+			// titleSetBtn
 			// 
-			this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button11.Location = new System.Drawing.Point(588, 14);
-			this.button11.Name = "button11";
-			this.button11.Size = new System.Drawing.Size(41, 23);
-			this.button11.TabIndex = 21;
-			this.button11.Text = "Set";
-			this.button11.UseVisualStyleBackColor = true;
+			this.titleSetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.titleSetBtn.Location = new System.Drawing.Point(588, 14);
+			this.titleSetBtn.Name = "titleSetBtn";
+			this.titleSetBtn.Size = new System.Drawing.Size(41, 23);
+			this.titleSetBtn.TabIndex = 21;
+			this.titleSetBtn.Text = "Set";
+			this.titleSetBtn.UseVisualStyleBackColor = true;
+			this.titleSetBtn.Click += new System.EventHandler(this.titleSetBtn_Click);
 			// 
-			// button10
+			// titleGetBtn
 			// 
-			this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button10.Location = new System.Drawing.Point(541, 14);
-			this.button10.Name = "button10";
-			this.button10.Size = new System.Drawing.Size(41, 23);
-			this.button10.TabIndex = 20;
-			this.button10.Text = "Get";
-			this.button10.UseVisualStyleBackColor = true;
+			this.titleGetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.titleGetBtn.Location = new System.Drawing.Point(541, 14);
+			this.titleGetBtn.Name = "titleGetBtn";
+			this.titleGetBtn.Size = new System.Drawing.Size(41, 23);
+			this.titleGetBtn.TabIndex = 20;
+			this.titleGetBtn.Text = "Get";
+			this.titleGetBtn.UseVisualStyleBackColor = true;
+			this.titleGetBtn.Click += new System.EventHandler(this.titleGetBtn_Click);
 			// 
 			// label4
 			// 
@@ -100,34 +104,33 @@
 			this.label2.TabIndex = 18;
 			this.label2.Text = "Title";
 			// 
-			// textBox7
+			// descriptionTextbox
 			// 
-			this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.descriptionTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox7.Location = new System.Drawing.Point(6, 16);
-			this.textBox7.Multiline = true;
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(576, 64);
-			this.textBox7.TabIndex = 16;
-			this.textBox7.Text = "line1\r\nline2\r\nline3\r\nline4";
+			this.descriptionTextbox.Location = new System.Drawing.Point(6, 16);
+			this.descriptionTextbox.Multiline = true;
+			this.descriptionTextbox.Name = "descriptionTextbox";
+			this.descriptionTextbox.Size = new System.Drawing.Size(576, 64);
+			this.descriptionTextbox.TabIndex = 16;
 			// 
-			// textBox6
+			// titleTextbox
 			// 
-			this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.titleTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox6.Location = new System.Drawing.Point(6, 16);
-			this.textBox6.Name = "textBox6";
-			this.textBox6.Size = new System.Drawing.Size(529, 20);
-			this.textBox6.TabIndex = 17;
+			this.titleTextbox.Location = new System.Drawing.Point(6, 16);
+			this.titleTextbox.Name = "titleTextbox";
+			this.titleTextbox.Size = new System.Drawing.Size(529, 20);
+			this.titleTextbox.TabIndex = 17;
 			// 
 			// panel1
 			// 
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel1.Controls.Add(this.textBox6);
+			this.panel1.Controls.Add(this.titleTextbox);
 			this.panel1.Controls.Add(this.label2);
-			this.panel1.Controls.Add(this.button10);
-			this.panel1.Controls.Add(this.button11);
+			this.panel1.Controls.Add(this.titleGetBtn);
+			this.panel1.Controls.Add(this.titleSetBtn);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(632, 44);
@@ -138,9 +141,9 @@
 			this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel2.Controls.Add(this.label4);
-			this.panel2.Controls.Add(this.textBox7);
-			this.panel2.Controls.Add(this.button12);
-			this.panel2.Controls.Add(this.button13);
+			this.panel2.Controls.Add(this.descriptionTextbox);
+			this.panel2.Controls.Add(this.descriptionSetBtn);
+			this.panel2.Controls.Add(this.descriptionGetBtn);
 			this.panel2.Location = new System.Drawing.Point(3, 53);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(632, 91);
@@ -164,14 +167,14 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button button12;
-		private System.Windows.Forms.Button button13;
-		private System.Windows.Forms.Button button11;
-		private System.Windows.Forms.Button button10;
+		private System.Windows.Forms.Button descriptionSetBtn;
+		private System.Windows.Forms.Button descriptionGetBtn;
+		private System.Windows.Forms.Button titleSetBtn;
+		private System.Windows.Forms.Button titleGetBtn;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox7;
-		private System.Windows.Forms.TextBox textBox6;
+		private System.Windows.Forms.TextBox descriptionTextbox;
+		private System.Windows.Forms.TextBox titleTextbox;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel2;
 	}

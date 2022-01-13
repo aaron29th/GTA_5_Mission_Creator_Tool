@@ -28,42 +28,55 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.jsonGroupBox = new System.Windows.Forms.GroupBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.connectBtn = new System.Windows.Forms.Button();
 			this.attachBtn = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.loadDeathmatchCreatorBtn = new System.Windows.Forms.Button();
 			this.loadRaceCreatorBtn = new System.Windows.Forms.Button();
 			this.loadMissionCreatorBtn = new System.Windows.Forms.Button();
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.inGameEditorGroupBox = new System.Windows.Forms.GroupBox();
 			this.bypassIsCloudAvailableCheck = new System.Windows.Forms.CheckBox();
-			this.outputBox = new GTA_5_Mission_Creator_Tool.UserControls.OutputBox();
-			this.gameMemoryEditor = new GTA_5_Mission_Creator_Tool.UserControls.GameMemoryEditor();
+			this.outputGroupBox = new System.Windows.Forms.GroupBox();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.metaJsonBox = new GTA_5_Mission_Creator_Tool.UserControls.JsonBox();
 			this.contentJsonBox = new GTA_5_Mission_Creator_Tool.UserControls.JsonBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.groupBox1.SuspendLayout();
+			this.gameMemoryEditor = new GTA_5_Mission_Creator_Tool.UserControls.GameMemoryEditor();
+			this.outputBox = new GTA_5_Mission_Creator_Tool.UserControls.OutputBox();
+			this.jsonGroupBox.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			this.groupBox3.SuspendLayout();
-			this.groupBox4.SuspendLayout();
+			this.inGameEditorGroupBox.SuspendLayout();
+			this.outputGroupBox.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// groupBox1
+			// jsonGroupBox
 			// 
-			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Controls.Add(this.metaJsonBox);
-			this.groupBox1.Controls.Add(this.contentJsonBox);
-			this.groupBox1.Location = new System.Drawing.Point(13, 234);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(1062, 334);
-			this.groupBox1.TabIndex = 0;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "JSON";
+			this.jsonGroupBox.Controls.Add(this.label1);
+			this.jsonGroupBox.Controls.Add(this.metaJsonBox);
+			this.jsonGroupBox.Controls.Add(this.contentJsonBox);
+			this.jsonGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.jsonGroupBox.Location = new System.Drawing.Point(0, 264);
+			this.jsonGroupBox.Name = "jsonGroupBox";
+			this.jsonGroupBox.Size = new System.Drawing.Size(1400, 435);
+			this.jsonGroupBox.TabIndex = 0;
+			this.jsonGroupBox.TabStop = false;
+			this.jsonGroupBox.Text = "JSON";
+			// 
+			// label1
+			// 
+			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.label1.Location = new System.Drawing.Point(-10, 169);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(1438, 1);
+			this.label1.TabIndex = 10;
 			// 
 			// connectBtn
 			// 
-			this.connectBtn.Location = new System.Drawing.Point(12, 12);
+			this.connectBtn.Location = new System.Drawing.Point(12, 3);
 			this.connectBtn.Name = "connectBtn";
 			this.connectBtn.Size = new System.Drawing.Size(121, 24);
 			this.connectBtn.TabIndex = 1;
@@ -73,7 +86,7 @@
 			// 
 			// attachBtn
 			// 
-			this.attachBtn.Location = new System.Drawing.Point(139, 12);
+			this.attachBtn.Location = new System.Drawing.Point(139, 3);
 			this.attachBtn.Name = "attachBtn";
 			this.attachBtn.Size = new System.Drawing.Size(121, 24);
 			this.attachBtn.TabIndex = 2;
@@ -86,16 +99,16 @@
 			this.groupBox2.Controls.Add(this.loadDeathmatchCreatorBtn);
 			this.groupBox2.Controls.Add(this.loadRaceCreatorBtn);
 			this.groupBox2.Controls.Add(this.loadMissionCreatorBtn);
-			this.groupBox2.Location = new System.Drawing.Point(309, 3);
+			this.groupBox2.Location = new System.Drawing.Point(6, 33);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(280, 55);
+			this.groupBox2.Size = new System.Drawing.Size(254, 50);
 			this.groupBox2.TabIndex = 5;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Load creator";
 			// 
 			// loadDeathmatchCreatorBtn
 			// 
-			this.loadDeathmatchCreatorBtn.Location = new System.Drawing.Point(190, 20);
+			this.loadDeathmatchCreatorBtn.Location = new System.Drawing.Point(168, 19);
 			this.loadDeathmatchCreatorBtn.Name = "loadDeathmatchCreatorBtn";
 			this.loadDeathmatchCreatorBtn.Size = new System.Drawing.Size(75, 23);
 			this.loadDeathmatchCreatorBtn.TabIndex = 2;
@@ -105,7 +118,7 @@
 			// 
 			// loadRaceCreatorBtn
 			// 
-			this.loadRaceCreatorBtn.Location = new System.Drawing.Point(107, 19);
+			this.loadRaceCreatorBtn.Location = new System.Drawing.Point(87, 19);
 			this.loadRaceCreatorBtn.Name = "loadRaceCreatorBtn";
 			this.loadRaceCreatorBtn.Size = new System.Drawing.Size(75, 23);
 			this.loadRaceCreatorBtn.TabIndex = 1;
@@ -115,7 +128,7 @@
 			// 
 			// loadMissionCreatorBtn
 			// 
-			this.loadMissionCreatorBtn.Location = new System.Drawing.Point(26, 20);
+			this.loadMissionCreatorBtn.Location = new System.Drawing.Point(6, 19);
 			this.loadMissionCreatorBtn.Name = "loadMissionCreatorBtn";
 			this.loadMissionCreatorBtn.Size = new System.Drawing.Size(75, 23);
 			this.loadMissionCreatorBtn.TabIndex = 0;
@@ -123,20 +136,21 @@
 			this.loadMissionCreatorBtn.UseVisualStyleBackColor = true;
 			this.loadMissionCreatorBtn.Click += new System.EventHandler(this.loadMissionCreatorBtn_Click);
 			// 
-			// groupBox3
+			// inGameEditorGroupBox
 			// 
-			this.groupBox3.Controls.Add(this.gameMemoryEditor);
-			this.groupBox3.Location = new System.Drawing.Point(13, 64);
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(737, 164);
-			this.groupBox3.TabIndex = 6;
-			this.groupBox3.TabStop = false;
-			this.groupBox3.Text = "In game editor";
+			this.inGameEditorGroupBox.Controls.Add(this.gameMemoryEditor);
+			this.inGameEditorGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+			this.inGameEditorGroupBox.Location = new System.Drawing.Point(0, 100);
+			this.inGameEditorGroupBox.Name = "inGameEditorGroupBox";
+			this.inGameEditorGroupBox.Size = new System.Drawing.Size(1400, 164);
+			this.inGameEditorGroupBox.TabIndex = 6;
+			this.inGameEditorGroupBox.TabStop = false;
+			this.inGameEditorGroupBox.Text = "In game editor";
 			// 
 			// bypassIsCloudAvailableCheck
 			// 
 			this.bypassIsCloudAvailableCheck.AutoSize = true;
-			this.bypassIsCloudAvailableCheck.Location = new System.Drawing.Point(619, 12);
+			this.bypassIsCloudAvailableCheck.Location = new System.Drawing.Point(276, 56);
 			this.bypassIsCloudAvailableCheck.Name = "bypassIsCloudAvailableCheck";
 			this.bypassIsCloudAvailableCheck.Size = new System.Drawing.Size(131, 17);
 			this.bypassIsCloudAvailableCheck.TabIndex = 7;
@@ -144,21 +158,28 @@
 			this.bypassIsCloudAvailableCheck.UseVisualStyleBackColor = true;
 			this.bypassIsCloudAvailableCheck.CheckedChanged += new System.EventHandler(this.bypassIsCloudAvailableCheck_CheckedChanged);
 			// 
-			// outputBox
+			// outputGroupBox
 			// 
-			this.outputBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.outputBox.Location = new System.Drawing.Point(3, 16);
-			this.outputBox.Name = "outputBox";
-			this.outputBox.Size = new System.Drawing.Size(747, 194);
-			this.outputBox.TabIndex = 8;
+			this.outputGroupBox.Controls.Add(this.outputBox);
+			this.outputGroupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.outputGroupBox.Location = new System.Drawing.Point(0, 699);
+			this.outputGroupBox.Name = "outputGroupBox";
+			this.outputGroupBox.Size = new System.Drawing.Size(1400, 213);
+			this.outputGroupBox.TabIndex = 9;
+			this.outputGroupBox.TabStop = false;
+			this.outputGroupBox.Text = "Output";
 			// 
-			// gameMemoryEditor
+			// panel1
 			// 
-			this.gameMemoryEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.gameMemoryEditor.Location = new System.Drawing.Point(3, 16);
-			this.gameMemoryEditor.Name = "gameMemoryEditor";
-			this.gameMemoryEditor.Size = new System.Drawing.Size(731, 145);
-			this.gameMemoryEditor.TabIndex = 0;
+			this.panel1.Controls.Add(this.connectBtn);
+			this.panel1.Controls.Add(this.attachBtn);
+			this.panel1.Controls.Add(this.bypassIsCloudAvailableCheck);
+			this.panel1.Controls.Add(this.groupBox2);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1400, 100);
+			this.panel1.TabIndex = 10;
 			// 
 			// metaJsonBox
 			// 
@@ -166,78 +187,74 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.metaJsonBox.Location = new System.Drawing.Point(6, 19);
 			this.metaJsonBox.Name = "metaJsonBox";
-			this.metaJsonBox.Size = new System.Drawing.Size(1050, 147);
+			this.metaJsonBox.Size = new System.Drawing.Size(1388, 147);
 			this.metaJsonBox.TabIndex = 0;
 			// 
 			// contentJsonBox
 			// 
-			this.contentJsonBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.contentJsonBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.contentJsonBox.Location = new System.Drawing.Point(6, 174);
 			this.contentJsonBox.Name = "contentJsonBox";
-			this.contentJsonBox.Size = new System.Drawing.Size(1050, 151);
+			this.contentJsonBox.Size = new System.Drawing.Size(1388, 255);
 			this.contentJsonBox.TabIndex = 9;
 			// 
-			// label1
+			// gameMemoryEditor
 			// 
-			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.label1.Location = new System.Drawing.Point(-10, 169);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(1100, 1);
-			this.label1.TabIndex = 10;
+			this.gameMemoryEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gameMemoryEditor.Location = new System.Drawing.Point(3, 16);
+			this.gameMemoryEditor.Name = "gameMemoryEditor";
+			this.gameMemoryEditor.Size = new System.Drawing.Size(1394, 145);
+			this.gameMemoryEditor.TabIndex = 0;
 			// 
-			// groupBox4
+			// outputBox
 			// 
-			this.groupBox4.Controls.Add(this.outputBox);
-			this.groupBox4.Location = new System.Drawing.Point(19, 587);
-			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(753, 213);
-			this.groupBox4.TabIndex = 9;
-			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Output";
+			this.outputBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.outputBox.Location = new System.Drawing.Point(3, 16);
+			this.outputBox.Name = "outputBox";
+			this.outputBox.Size = new System.Drawing.Size(1394, 194);
+			this.outputBox.TabIndex = 8;
 			// 
 			// mainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1400, 912);
-			this.Controls.Add(this.groupBox4);
-			this.Controls.Add(this.bypassIsCloudAvailableCheck);
-			this.Controls.Add(this.groupBox3);
-			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.attachBtn);
-			this.Controls.Add(this.connectBtn);
-			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.jsonGroupBox);
+			this.Controls.Add(this.inGameEditorGroupBox);
+			this.Controls.Add(this.outputGroupBox);
+			this.Controls.Add(this.panel1);
 			this.Name = "mainForm";
 			this.Text = "OG Mission Creator Tool";
-			this.groupBox1.ResumeLayout(false);
+			this.jsonGroupBox.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
-			this.groupBox3.ResumeLayout(false);
-			this.groupBox4.ResumeLayout(false);
+			this.inGameEditorGroupBox.ResumeLayout(false);
+			this.outputGroupBox.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox jsonGroupBox;
 		private System.Windows.Forms.Button connectBtn;
 		private System.Windows.Forms.Button attachBtn;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.Button loadDeathmatchCreatorBtn;
 		private System.Windows.Forms.Button loadRaceCreatorBtn;
 		private System.Windows.Forms.Button loadMissionCreatorBtn;
-		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.GroupBox inGameEditorGroupBox;
 		private UserControls.JsonBox metaJsonBox;
 		private UserControls.JsonBox contentJsonBox;
 		private UserControls.GameMemoryEditor gameMemoryEditor;
 		private System.Windows.Forms.CheckBox bypassIsCloudAvailableCheck;
 		private UserControls.OutputBox outputBox;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.GroupBox outputGroupBox;
+		private System.Windows.Forms.Panel panel1;
 	}
 }
 

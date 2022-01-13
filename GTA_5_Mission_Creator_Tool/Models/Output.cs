@@ -12,14 +12,14 @@ namespace GTA_5_Mission_Creator_Tool.Models
 	{
 		public static OutputBox outputBox = null;
 
-		public static void write(string text)
+		public static void Write(string text)
 		{
 			outputBox?.prependMessage($"[ {DateTime.Now:H:mm:ss} ] {text}");
 		}
 
-		public static void write(string formatStr, params object[] args)
+		public static void Write(string formatStr, params object[] args)
 		{
-			write(string.Format(formatStr, args));
+			Write(string.Format(formatStr, args));
 		}
 	}
 }
