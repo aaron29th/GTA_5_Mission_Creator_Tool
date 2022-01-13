@@ -16,5 +16,10 @@ namespace GTA_5_Mission_Creator_Tool.UserControls
 		{
 			InitializeComponent();
 		}
+
+		public void prependMessage(string message)
+		{
+			outputTextbox.Text = message + Environment.NewLine + outputTextbox.Text;
+		}
 	}
 }
