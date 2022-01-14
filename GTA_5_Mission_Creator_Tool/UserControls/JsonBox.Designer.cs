@@ -30,7 +30,7 @@
 		{
 			this.selectPathBtn = new System.Windows.Forms.Button();
 			this.saveBtn = new System.Windows.Forms.Button();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.saveFileTextbox = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.jsonTextbox = new System.Windows.Forms.RichTextBox();
@@ -60,14 +60,14 @@
 			this.saveBtn.UseVisualStyleBackColor = true;
 			this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
 			// 
-			// textBox2
+			// saveFileTextbox
 			// 
-			this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+			this.saveFileTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox2.Location = new System.Drawing.Point(168, 394);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(258, 20);
-			this.textBox2.TabIndex = 10;
+			this.saveFileTextbox.Location = new System.Drawing.Point(168, 394);
+			this.saveFileTextbox.Name = "saveFileTextbox";
+			this.saveFileTextbox.Size = new System.Drawing.Size(258, 20);
+			this.saveFileTextbox.TabIndex = 10;
 			// 
 			// label1
 			// 
@@ -132,7 +132,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.selectPathBtn);
 			this.Controls.Add(this.saveBtn);
-			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.saveFileTextbox);
 			this.Controls.Add(this.label1);
 			this.Name = "JsonBox";
 			this.Size = new System.Drawing.Size(591, 417);
@@ -145,7 +145,7 @@
 
 		private System.Windows.Forms.Button selectPathBtn;
 		private System.Windows.Forms.Button saveBtn;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox saveFileTextbox;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.RichTextBox jsonTextbox;

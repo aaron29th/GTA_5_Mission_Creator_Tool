@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.jsonGroupBox = new System.Windows.Forms.GroupBox();
+			this.contentJsonBox = new GTA_5_Mission_Creator_Tool.UserControls.JsonBox();
 			this.connectBtn = new System.Windows.Forms.Button();
 			this.attachBtn = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -36,27 +37,27 @@
 			this.loadRaceCreatorBtn = new System.Windows.Forms.Button();
 			this.loadMissionCreatorBtn = new System.Windows.Forms.Button();
 			this.inGameEditorGroupBox = new System.Windows.Forms.GroupBox();
-			this.outputGroupBox = new System.Windows.Forms.GroupBox();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.devModeCheck = new System.Windows.Forms.CheckBox();
-			this.interceptionEnableBtn = new System.Windows.Forms.Button();
-			this.connectionGroupBox = new System.Windows.Forms.GroupBox();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.scriptNameTextbox = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.terminateScriptBtn = new System.Windows.Forms.Button();
-			this.terminateCreatorScriptsBtn = new System.Windows.Forms.Button();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.contentJsonBox = new GTA_5_Mission_Creator_Tool.UserControls.JsonBox();
 			this.gameMemoryEditor = new GTA_5_Mission_Creator_Tool.UserControls.GameMemoryEditor();
+			this.outputGroupBox = new System.Windows.Forms.GroupBox();
 			this.outputBox = new GTA_5_Mission_Creator_Tool.UserControls.OutputBox();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.terminateCreatorScriptsBtn = new System.Windows.Forms.Button();
+			this.terminateScriptBtn = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.scriptNameTextbox = new System.Windows.Forms.TextBox();
+			this.connectionGroupBox = new System.Windows.Forms.GroupBox();
+			this.interceptionEnableBtn = new System.Windows.Forms.Button();
+			this.devModeCheck = new System.Windows.Forms.CheckBox();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.profanityBypassCheck = new System.Windows.Forms.CheckBox();
 			this.jsonGroupBox.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.inGameEditorGroupBox.SuspendLayout();
 			this.outputGroupBox.SuspendLayout();
 			this.panel1.SuspendLayout();
-			this.connectionGroupBox.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.connectionGroupBox.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -71,6 +72,14 @@
 			this.jsonGroupBox.TabIndex = 0;
 			this.jsonGroupBox.TabStop = false;
 			this.jsonGroupBox.Text = "JSON";
+			// 
+			// contentJsonBox
+			// 
+			this.contentJsonBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.contentJsonBox.Location = new System.Drawing.Point(3, 16);
+			this.contentJsonBox.Name = "contentJsonBox";
+			this.contentJsonBox.Size = new System.Drawing.Size(1394, 520);
+			this.contentJsonBox.TabIndex = 9;
 			// 
 			// connectBtn
 			// 
@@ -145,6 +154,14 @@
 			this.inGameEditorGroupBox.TabStop = false;
 			this.inGameEditorGroupBox.Text = "In game editor";
 			// 
+			// gameMemoryEditor
+			// 
+			this.gameMemoryEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gameMemoryEditor.Location = new System.Drawing.Point(3, 16);
+			this.gameMemoryEditor.Name = "gameMemoryEditor";
+			this.gameMemoryEditor.Size = new System.Drawing.Size(957, 141);
+			this.gameMemoryEditor.TabIndex = 0;
+			// 
 			// outputGroupBox
 			// 
 			this.outputGroupBox.Controls.Add(this.outputBox);
@@ -156,9 +173,18 @@
 			this.outputGroupBox.TabStop = false;
 			this.outputGroupBox.Text = "Output";
 			// 
+			// outputBox
+			// 
+			this.outputBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.outputBox.Location = new System.Drawing.Point(3, 16);
+			this.outputBox.Name = "outputBox";
+			this.outputBox.Size = new System.Drawing.Size(1394, 194);
+			this.outputBox.TabIndex = 8;
+			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+			this.panel1.Controls.Add(this.profanityBypassCheck);
 			this.panel1.Controls.Add(this.groupBox1);
 			this.panel1.Controls.Add(this.connectionGroupBox);
 			this.panel1.Controls.Add(this.devModeCheck);
@@ -168,39 +194,6 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(437, 160);
 			this.panel1.TabIndex = 10;
-			// 
-			// devModeCheck
-			// 
-			this.devModeCheck.AutoSize = true;
-			this.devModeCheck.Location = new System.Drawing.Point(9, 132);
-			this.devModeCheck.Name = "devModeCheck";
-			this.devModeCheck.Size = new System.Drawing.Size(75, 17);
-			this.devModeCheck.TabIndex = 8;
-			this.devModeCheck.Text = "Dev mode";
-			this.devModeCheck.UseVisualStyleBackColor = true;
-			this.devModeCheck.CheckedChanged += new System.EventHandler(this.devModeCheck_CheckedChanged);
-			// 
-			// interceptionEnableBtn
-			// 
-			this.interceptionEnableBtn.Location = new System.Drawing.Point(168, 19);
-			this.interceptionEnableBtn.Name = "interceptionEnableBtn";
-			this.interceptionEnableBtn.Size = new System.Drawing.Size(75, 40);
-			this.interceptionEnableBtn.TabIndex = 9;
-			this.interceptionEnableBtn.Text = "Enable interception";
-			this.interceptionEnableBtn.UseVisualStyleBackColor = true;
-			this.interceptionEnableBtn.Click += new System.EventHandler(this.interceptionEnableBtn_Click);
-			// 
-			// connectionGroupBox
-			// 
-			this.connectionGroupBox.Controls.Add(this.connectBtn);
-			this.connectionGroupBox.Controls.Add(this.interceptionEnableBtn);
-			this.connectionGroupBox.Controls.Add(this.attachBtn);
-			this.connectionGroupBox.Location = new System.Drawing.Point(3, 3);
-			this.connectionGroupBox.Name = "connectionGroupBox";
-			this.connectionGroupBox.Size = new System.Drawing.Size(248, 67);
-			this.connectionGroupBox.TabIndex = 10;
-			this.connectionGroupBox.TabStop = false;
-			this.connectionGroupBox.Text = "Connection";
 			// 
 			// groupBox1
 			// 
@@ -215,21 +208,15 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Terminate scripts";
 			// 
-			// scriptNameTextbox
+			// terminateCreatorScriptsBtn
 			// 
-			this.scriptNameTextbox.Location = new System.Drawing.Point(9, 61);
-			this.scriptNameTextbox.Name = "scriptNameTextbox";
-			this.scriptNameTextbox.Size = new System.Drawing.Size(153, 20);
-			this.scriptNameTextbox.TabIndex = 0;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 45);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(63, 13);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Script name";
+			this.terminateCreatorScriptsBtn.Location = new System.Drawing.Point(9, 19);
+			this.terminateCreatorScriptsBtn.Name = "terminateCreatorScriptsBtn";
+			this.terminateCreatorScriptsBtn.Size = new System.Drawing.Size(153, 23);
+			this.terminateCreatorScriptsBtn.TabIndex = 3;
+			this.terminateCreatorScriptsBtn.Text = "Terminate creator scripts";
+			this.terminateCreatorScriptsBtn.UseVisualStyleBackColor = true;
+			this.terminateCreatorScriptsBtn.Click += new System.EventHandler(this.terminateCreatorScriptsBtn_Click);
 			// 
 			// terminateScriptBtn
 			// 
@@ -241,15 +228,54 @@
 			this.terminateScriptBtn.UseVisualStyleBackColor = true;
 			this.terminateScriptBtn.Click += new System.EventHandler(this.terminateScriptBtn_Click);
 			// 
-			// terminateCreatorScriptsBtn
+			// label1
 			// 
-			this.terminateCreatorScriptsBtn.Location = new System.Drawing.Point(9, 19);
-			this.terminateCreatorScriptsBtn.Name = "terminateCreatorScriptsBtn";
-			this.terminateCreatorScriptsBtn.Size = new System.Drawing.Size(153, 23);
-			this.terminateCreatorScriptsBtn.TabIndex = 3;
-			this.terminateCreatorScriptsBtn.Text = "Terminate creator scripts";
-			this.terminateCreatorScriptsBtn.UseVisualStyleBackColor = true;
-			this.terminateCreatorScriptsBtn.Click += new System.EventHandler(this.terminateCreatorScriptsBtn_Click);
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(6, 45);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(63, 13);
+			this.label1.TabIndex = 1;
+			this.label1.Text = "Script name";
+			// 
+			// scriptNameTextbox
+			// 
+			this.scriptNameTextbox.Location = new System.Drawing.Point(9, 61);
+			this.scriptNameTextbox.Name = "scriptNameTextbox";
+			this.scriptNameTextbox.Size = new System.Drawing.Size(153, 20);
+			this.scriptNameTextbox.TabIndex = 0;
+			// 
+			// connectionGroupBox
+			// 
+			this.connectionGroupBox.Controls.Add(this.connectBtn);
+			this.connectionGroupBox.Controls.Add(this.interceptionEnableBtn);
+			this.connectionGroupBox.Controls.Add(this.attachBtn);
+			this.connectionGroupBox.Location = new System.Drawing.Point(3, 3);
+			this.connectionGroupBox.Name = "connectionGroupBox";
+			this.connectionGroupBox.Size = new System.Drawing.Size(248, 67);
+			this.connectionGroupBox.TabIndex = 10;
+			this.connectionGroupBox.TabStop = false;
+			this.connectionGroupBox.Text = "Connection";
+			// 
+			// interceptionEnableBtn
+			// 
+			this.interceptionEnableBtn.Location = new System.Drawing.Point(168, 19);
+			this.interceptionEnableBtn.Name = "interceptionEnableBtn";
+			this.interceptionEnableBtn.Size = new System.Drawing.Size(75, 40);
+			this.interceptionEnableBtn.TabIndex = 9;
+			this.interceptionEnableBtn.Text = "Enable interception";
+			this.interceptionEnableBtn.UseVisualStyleBackColor = true;
+			this.interceptionEnableBtn.Click += new System.EventHandler(this.interceptionEnableBtn_Click);
+			// 
+			// devModeCheck
+			// 
+			this.devModeCheck.AutoSize = true;
+			this.devModeCheck.Location = new System.Drawing.Point(9, 132);
+			this.devModeCheck.Name = "devModeCheck";
+			this.devModeCheck.Size = new System.Drawing.Size(75, 17);
+			this.devModeCheck.TabIndex = 8;
+			this.devModeCheck.Text = "Dev mode";
+			this.devModeCheck.UseVisualStyleBackColor = true;
+			this.devModeCheck.CheckedChanged += new System.EventHandler(this.devModeCheck_CheckedChanged);
 			// 
 			// panel2
 			// 
@@ -262,29 +288,16 @@
 			this.panel2.Size = new System.Drawing.Size(1400, 160);
 			this.panel2.TabIndex = 11;
 			// 
-			// contentJsonBox
+			// profanityBypassCheck
 			// 
-			this.contentJsonBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.contentJsonBox.Location = new System.Drawing.Point(3, 16);
-			this.contentJsonBox.Name = "contentJsonBox";
-			this.contentJsonBox.Size = new System.Drawing.Size(1394, 520);
-			this.contentJsonBox.TabIndex = 9;
-			// 
-			// gameMemoryEditor
-			// 
-			this.gameMemoryEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.gameMemoryEditor.Location = new System.Drawing.Point(3, 16);
-			this.gameMemoryEditor.Name = "gameMemoryEditor";
-			this.gameMemoryEditor.Size = new System.Drawing.Size(957, 141);
-			this.gameMemoryEditor.TabIndex = 0;
-			// 
-			// outputBox
-			// 
-			this.outputBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.outputBox.Location = new System.Drawing.Point(3, 16);
-			this.outputBox.Name = "outputBox";
-			this.outputBox.Size = new System.Drawing.Size(1394, 194);
-			this.outputBox.TabIndex = 8;
+			this.profanityBypassCheck.AutoSize = true;
+			this.profanityBypassCheck.Location = new System.Drawing.Point(90, 132);
+			this.profanityBypassCheck.Name = "profanityBypassCheck";
+			this.profanityBypassCheck.Size = new System.Drawing.Size(136, 17);
+			this.profanityBypassCheck.TabIndex = 12;
+			this.profanityBypassCheck.Text = "Bypass profanity check";
+			this.profanityBypassCheck.UseVisualStyleBackColor = true;
+			this.profanityBypassCheck.CheckedChanged += new System.EventHandler(this.profanityBypassCheck_CheckedChanged);
 			// 
 			// mainForm
 			// 
@@ -302,9 +315,9 @@
 			this.outputGroupBox.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			this.connectionGroupBox.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.connectionGroupBox.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -334,6 +347,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox scriptNameTextbox;
 		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.CheckBox profanityBypassCheck;
 	}
 }
 

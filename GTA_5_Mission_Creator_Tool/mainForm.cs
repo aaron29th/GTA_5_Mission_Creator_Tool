@@ -51,8 +51,6 @@ namespace GTA_5_Mission_Creator_Tool
 
 			RPC.Enable();
 			Output.Write("RPC enabled");
-
-			
 		}
 
 		private void interceptionEnableBtn_Click(object sender, EventArgs e)
@@ -61,6 +59,10 @@ namespace GTA_5_Mission_Creator_Tool
 			Output.Write("Save interception enabled");
 
 			devModeCheck.Checked = true;
+			Creator.RockstarDev = true;
+
+			profanityBypassCheck.Checked = true;
+			Creator.BypassProfanityCheck(true);
 		}
 
 		private void loadMissionCreatorBtn_Click(object sender, EventArgs e)
@@ -104,6 +106,11 @@ namespace GTA_5_Mission_Creator_Tool
 		{
 			terminateScript(scriptNameTextbox.Text);
 			
+		}
+
+		private void profanityBypassCheck_CheckedChanged(object sender, EventArgs e)
+		{
+			Creator.BypassProfanityCheck(profanityBypassCheck.Checked);
 		}
 	}
 }

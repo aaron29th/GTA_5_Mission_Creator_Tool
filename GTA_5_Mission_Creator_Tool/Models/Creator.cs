@@ -48,6 +48,18 @@ namespace GTA_5_Mission_Creator_Tool.Models
 			PS3.Extension.WriteUInt32(0x011BB388, patched ? LiR3_1 : 0x63E30000);
 		}
 
+		public static void BypassProfanityCheck(bool patched)
+		{
+			// SOCIALCLUB::SC_PROFANITY_GET_CHECK_IS_VALID
+			PS3.Extension.WriteUInt32(0x3E3814, patched ? LiR3_1 : LiR3_0);
+
+			// SOCIALCLUB::SC_PROFANITY_GET_CHECK_IS_PENDING
+			PS3.Extension.WriteUInt32(0x3E3864, patched ? LiR3_0 : 0x5463DFFE);
+
+			// SOCIALCLUB::SC_PROFANITY_GET_STRING_PASSED
+			PS3.Extension.WriteUInt32(0x3E3894, patched ? LiR3_1 : 0x5463DFFE);
+		}
+
 		public static bool LoadScript(string scriptName, uint stackSize = 15000)
 		{
 			uint aPointer = 0x10041F88;
