@@ -52,6 +52,8 @@
 			this.contentJsonBox = new GTA_5_Mission_Creator_Tool.UserControls.JsonBox();
 			this.gameMemoryEditor = new GTA_5_Mission_Creator_Tool.UserControls.GameMemoryEditor();
 			this.outputBox = new GTA_5_Mission_Creator_Tool.UserControls.OutputBox();
+			this.tmapiRadio = new System.Windows.Forms.RadioButton();
+			this.ccapiRadio = new System.Windows.Forms.RadioButton();
 			this.jsonGroupBox.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.inGameEditorGroupBox.SuspendLayout();
@@ -76,7 +78,7 @@
 			// 
 			// connectBtn
 			// 
-			this.connectBtn.Location = new System.Drawing.Point(6, 19);
+			this.connectBtn.Location = new System.Drawing.Point(6, 41);
 			this.connectBtn.Name = "connectBtn";
 			this.connectBtn.Size = new System.Drawing.Size(75, 40);
 			this.connectBtn.TabIndex = 1;
@@ -86,7 +88,7 @@
 			// 
 			// attachBtn
 			// 
-			this.attachBtn.Location = new System.Drawing.Point(87, 19);
+			this.attachBtn.Location = new System.Drawing.Point(87, 41);
 			this.attachBtn.Name = "attachBtn";
 			this.attachBtn.Size = new System.Drawing.Size(75, 40);
 			this.attachBtn.TabIndex = 2;
@@ -99,7 +101,7 @@
 			this.groupBox2.Controls.Add(this.loadDeathmatchCreatorBtn);
 			this.groupBox2.Controls.Add(this.loadRaceCreatorBtn);
 			this.groupBox2.Controls.Add(this.loadMissionCreatorBtn);
-			this.groupBox2.Location = new System.Drawing.Point(3, 76);
+			this.groupBox2.Location = new System.Drawing.Point(3, 104);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(254, 50);
 			this.groupBox2.TabIndex = 5;
@@ -223,19 +225,21 @@
 			// 
 			// connectionGroupBox
 			// 
+			this.connectionGroupBox.Controls.Add(this.ccapiRadio);
+			this.connectionGroupBox.Controls.Add(this.tmapiRadio);
 			this.connectionGroupBox.Controls.Add(this.connectBtn);
 			this.connectionGroupBox.Controls.Add(this.interceptionEnableBtn);
 			this.connectionGroupBox.Controls.Add(this.attachBtn);
 			this.connectionGroupBox.Location = new System.Drawing.Point(3, 3);
 			this.connectionGroupBox.Name = "connectionGroupBox";
-			this.connectionGroupBox.Size = new System.Drawing.Size(248, 67);
+			this.connectionGroupBox.Size = new System.Drawing.Size(248, 90);
 			this.connectionGroupBox.TabIndex = 10;
 			this.connectionGroupBox.TabStop = false;
 			this.connectionGroupBox.Text = "Connection";
 			// 
 			// interceptionEnableBtn
 			// 
-			this.interceptionEnableBtn.Location = new System.Drawing.Point(168, 19);
+			this.interceptionEnableBtn.Location = new System.Drawing.Point(168, 41);
 			this.interceptionEnableBtn.Name = "interceptionEnableBtn";
 			this.interceptionEnableBtn.Size = new System.Drawing.Size(75, 40);
 			this.interceptionEnableBtn.TabIndex = 9;
@@ -246,7 +250,7 @@
 			// devModeCheck
 			// 
 			this.devModeCheck.AutoSize = true;
-			this.devModeCheck.Location = new System.Drawing.Point(9, 132);
+			this.devModeCheck.Location = new System.Drawing.Point(266, 140);
 			this.devModeCheck.Name = "devModeCheck";
 			this.devModeCheck.Size = new System.Drawing.Size(75, 17);
 			this.devModeCheck.TabIndex = 8;
@@ -268,7 +272,7 @@
 			// profanityBypassCheck
 			// 
 			this.profanityBypassCheck.AutoSize = true;
-			this.profanityBypassCheck.Location = new System.Drawing.Point(90, 132);
+			this.profanityBypassCheck.Location = new System.Drawing.Point(266, 119);
 			this.profanityBypassCheck.Name = "profanityBypassCheck";
 			this.profanityBypassCheck.Size = new System.Drawing.Size(136, 17);
 			this.profanityBypassCheck.TabIndex = 12;
@@ -300,6 +304,28 @@
 			this.outputBox.Size = new System.Drawing.Size(1394, 194);
 			this.outputBox.TabIndex = 8;
 			// 
+			// tmapiRadio
+			// 
+			this.tmapiRadio.AutoSize = true;
+			this.tmapiRadio.Checked = true;
+			this.tmapiRadio.Location = new System.Drawing.Point(6, 19);
+			this.tmapiRadio.Name = "tmapiRadio";
+			this.tmapiRadio.Size = new System.Drawing.Size(58, 17);
+			this.tmapiRadio.TabIndex = 10;
+			this.tmapiRadio.TabStop = true;
+			this.tmapiRadio.Text = "TMAPI";
+			this.tmapiRadio.UseVisualStyleBackColor = true;
+			// 
+			// ccapiRadio
+			// 
+			this.ccapiRadio.AutoSize = true;
+			this.ccapiRadio.Location = new System.Drawing.Point(87, 19);
+			this.ccapiRadio.Name = "ccapiRadio";
+			this.ccapiRadio.Size = new System.Drawing.Size(56, 17);
+			this.ccapiRadio.TabIndex = 11;
+			this.ccapiRadio.Text = "CCAPI";
+			this.ccapiRadio.UseVisualStyleBackColor = true;
+			// 
 			// mainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +347,7 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.connectionGroupBox.ResumeLayout(false);
+			this.connectionGroupBox.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -351,6 +378,8 @@
 		private System.Windows.Forms.TextBox scriptNameTextbox;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.CheckBox profanityBypassCheck;
+		private System.Windows.Forms.RadioButton ccapiRadio;
+		private System.Windows.Forms.RadioButton tmapiRadio;
 	}
 }
 

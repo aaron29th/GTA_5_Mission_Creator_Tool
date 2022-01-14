@@ -14,7 +14,7 @@ namespace GTA_5_Mission_Creator_Tool
 {
 	public partial class mainForm : Form
 	{
-		private static PS3API PS3 = new PS3API(SelectAPI.TargetManager);
+		private static PS3API PS3 = new PS3API();
 
 		public mainForm()
 		{
@@ -29,8 +29,12 @@ namespace GTA_5_Mission_Creator_Tool
 
 		private void connectBtn_Click(object sender, EventArgs e)
 		{
-			if (PS3.ConnectTarget()) Output.Write("Connected to " + PS3.GetConsoleName());
-			else Output.Write("Failed to connect");
+			PS3.ChangeAPI(tmapiRadio.Checked ? SelectAPI.TargetManager : SelectAPI.ControlConsole);
+
+			if (PS3.ConnectTarget()) 
+				Output.Write("Connected to " + PS3.GetConsoleName());
+			else 
+				Output.Write("Failed to connect");
 		}
 
 		private void attachBtn_Click(object sender, EventArgs e)
