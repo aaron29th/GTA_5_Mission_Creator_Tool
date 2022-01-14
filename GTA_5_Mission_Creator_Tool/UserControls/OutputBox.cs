@@ -21,5 +21,10 @@ namespace GTA_5_Mission_Creator_Tool.UserControls
 		{
 			outputTextbox.Text = message + Environment.NewLine + outputTextbox.Text;
 		}
+
+		private void outputTextbox_LinkClicked(object sender, LinkClickedEventArgs e)
+		{
+			System.Diagnostics.Process.Start(e.LinkText);
+		}
 	}
 }

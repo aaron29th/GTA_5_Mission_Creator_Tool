@@ -40,6 +40,7 @@
 			this.outputTextbox.Size = new System.Drawing.Size(272, 140);
 			this.outputTextbox.TabIndex = 0;
 			this.outputTextbox.Text = "";
+			this.outputTextbox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.outputTextbox_LinkClicked);
 			// 
 			// OutputBox
 			// 

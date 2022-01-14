@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
 			this.jsonGroupBox = new System.Windows.Forms.GroupBox();
-			this.contentJsonBox = new GTA_5_Mission_Creator_Tool.UserControls.JsonBox();
 			this.connectBtn = new System.Windows.Forms.Button();
 			this.attachBtn = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -37,9 +37,7 @@
 			this.loadRaceCreatorBtn = new System.Windows.Forms.Button();
 			this.loadMissionCreatorBtn = new System.Windows.Forms.Button();
 			this.inGameEditorGroupBox = new System.Windows.Forms.GroupBox();
-			this.gameMemoryEditor = new GTA_5_Mission_Creator_Tool.UserControls.GameMemoryEditor();
 			this.outputGroupBox = new System.Windows.Forms.GroupBox();
-			this.outputBox = new GTA_5_Mission_Creator_Tool.UserControls.OutputBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.terminateCreatorScriptsBtn = new System.Windows.Forms.Button();
@@ -51,6 +49,9 @@
 			this.devModeCheck = new System.Windows.Forms.CheckBox();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.profanityBypassCheck = new System.Windows.Forms.CheckBox();
+			this.contentJsonBox = new GTA_5_Mission_Creator_Tool.UserControls.JsonBox();
+			this.gameMemoryEditor = new GTA_5_Mission_Creator_Tool.UserControls.GameMemoryEditor();
+			this.outputBox = new GTA_5_Mission_Creator_Tool.UserControls.OutputBox();
 			this.jsonGroupBox.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.inGameEditorGroupBox.SuspendLayout();
@@ -72,14 +73,6 @@
 			this.jsonGroupBox.TabIndex = 0;
 			this.jsonGroupBox.TabStop = false;
 			this.jsonGroupBox.Text = "JSON";
-			// 
-			// contentJsonBox
-			// 
-			this.contentJsonBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.contentJsonBox.Location = new System.Drawing.Point(3, 16);
-			this.contentJsonBox.Name = "contentJsonBox";
-			this.contentJsonBox.Size = new System.Drawing.Size(1394, 520);
-			this.contentJsonBox.TabIndex = 9;
 			// 
 			// connectBtn
 			// 
@@ -154,14 +147,6 @@
 			this.inGameEditorGroupBox.TabStop = false;
 			this.inGameEditorGroupBox.Text = "In game editor";
 			// 
-			// gameMemoryEditor
-			// 
-			this.gameMemoryEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.gameMemoryEditor.Location = new System.Drawing.Point(3, 16);
-			this.gameMemoryEditor.Name = "gameMemoryEditor";
-			this.gameMemoryEditor.Size = new System.Drawing.Size(957, 141);
-			this.gameMemoryEditor.TabIndex = 0;
-			// 
 			// outputGroupBox
 			// 
 			this.outputGroupBox.Controls.Add(this.outputBox);
@@ -172,14 +157,6 @@
 			this.outputGroupBox.TabIndex = 9;
 			this.outputGroupBox.TabStop = false;
 			this.outputGroupBox.Text = "Output";
-			// 
-			// outputBox
-			// 
-			this.outputBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.outputBox.Location = new System.Drawing.Point(3, 16);
-			this.outputBox.Name = "outputBox";
-			this.outputBox.Size = new System.Drawing.Size(1394, 194);
-			this.outputBox.TabIndex = 8;
 			// 
 			// panel1
 			// 
@@ -299,6 +276,30 @@
 			this.profanityBypassCheck.UseVisualStyleBackColor = true;
 			this.profanityBypassCheck.CheckedChanged += new System.EventHandler(this.profanityBypassCheck_CheckedChanged);
 			// 
+			// contentJsonBox
+			// 
+			this.contentJsonBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.contentJsonBox.Location = new System.Drawing.Point(3, 16);
+			this.contentJsonBox.Name = "contentJsonBox";
+			this.contentJsonBox.Size = new System.Drawing.Size(1394, 520);
+			this.contentJsonBox.TabIndex = 9;
+			// 
+			// gameMemoryEditor
+			// 
+			this.gameMemoryEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gameMemoryEditor.Location = new System.Drawing.Point(3, 16);
+			this.gameMemoryEditor.Name = "gameMemoryEditor";
+			this.gameMemoryEditor.Size = new System.Drawing.Size(957, 141);
+			this.gameMemoryEditor.TabIndex = 0;
+			// 
+			// outputBox
+			// 
+			this.outputBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.outputBox.Location = new System.Drawing.Point(3, 16);
+			this.outputBox.Name = "outputBox";
+			this.outputBox.Size = new System.Drawing.Size(1394, 194);
+			this.outputBox.TabIndex = 8;
+			// 
 			// mainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,8 +308,10 @@
 			this.Controls.Add(this.jsonGroupBox);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.outputGroupBox);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "mainForm";
 			this.Text = "GTA 5 OG Mission Creator Tool";
+			this.Load += new System.EventHandler(this.mainForm_Load);
 			this.jsonGroupBox.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.inGameEditorGroupBox.ResumeLayout(false);

@@ -86,6 +86,7 @@ namespace GTA_5_Mission_Creator_Tool
 		private void devModeCheck_CheckedChanged(object sender, EventArgs e)
 		{
 			Creator.RockstarDev = devModeCheck.Checked;
+			Output.Write("Dev mode: " + (devModeCheck.Checked ? "Enabled" : "Disabled"));
 		}
 
 		private void terminateScript(string scriptName)
@@ -111,6 +112,29 @@ namespace GTA_5_Mission_Creator_Tool
 		private void profanityBypassCheck_CheckedChanged(object sender, EventArgs e)
 		{
 			Creator.BypassProfanityCheck(profanityBypassCheck.Checked);
+			Output.Write("Profanity check: " + (profanityBypassCheck.Checked ? "Disabled" : "Enabled"));
+		}
+
+		private void mainForm_Load(object sender, EventArgs e)
+		{
+			Output.Write($"Current version: {Updates.VersionStr}");
+			checkUpdates();
+		}
+
+		private void checkUpdates()
+		{
+			Updates update = Updates.CheckUpdates();
+			if (update == null)
+			{
+				Output.Write("Failed to check for updates");
+				return;
+			}
+
+			if (update.LatestVersion > Updates.Version)
+				Output.Write($"A new version is available: {update.LatestDownload}");
+
+			if (!string.IsNullOrWhiteSpace(update.StartUpMessage))
+				Output.Write(update.StartUpMessage);
 		}
 	}
 }
