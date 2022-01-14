@@ -28,17 +28,18 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.outputTextbox = new System.Windows.Forms.TextBox();
+			this.outputTextbox = new System.Windows.Forms.RichTextBox();
 			this.SuspendLayout();
 			// 
 			// outputTextbox
 			// 
 			this.outputTextbox.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.outputTextbox.Location = new System.Drawing.Point(0, 0);
-			this.outputTextbox.Multiline = true;
 			this.outputTextbox.Name = "outputTextbox";
-			this.outputTextbox.Size = new System.Drawing.Size(498, 170);
-			this.outputTextbox.TabIndex = 10;
+			this.outputTextbox.ReadOnly = true;
+			this.outputTextbox.Size = new System.Drawing.Size(272, 140);
+			this.outputTextbox.TabIndex = 0;
+			this.outputTextbox.Text = "";
 			// 
 			// OutputBox
 			// 
@@ -46,13 +47,13 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.outputTextbox);
 			this.Name = "OutputBox";
-			this.Size = new System.Drawing.Size(498, 170);
+			this.Size = new System.Drawing.Size(272, 140);
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
 		#endregion
-		private System.Windows.Forms.TextBox outputTextbox;
+
+		private System.Windows.Forms.RichTextBox outputTextbox;
 	}
 }

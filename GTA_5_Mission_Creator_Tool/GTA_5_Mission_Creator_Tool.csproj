@@ -55,6 +55,7 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContentIntercepter.cs" />
     <Compile Include="Models\Creator.cs" />
     <Compile Include="Models\Natives.cs" />
     <Compile Include="Models\Output.cs" />

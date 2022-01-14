@@ -113,6 +113,7 @@
 			this.descriptionTextbox.Name = "descriptionTextbox";
 			this.descriptionTextbox.Size = new System.Drawing.Size(576, 64);
 			this.descriptionTextbox.TabIndex = 16;
+			this.descriptionTextbox.Text = "Example description";
 			// 
 			// titleTextbox
 			// 
@@ -122,6 +123,7 @@
 			this.titleTextbox.Name = "titleTextbox";
 			this.titleTextbox.Size = new System.Drawing.Size(529, 20);
 			this.titleTextbox.TabIndex = 17;
+			this.titleTextbox.Text = "Example title";
 			// 
 			// panel1
 			// 

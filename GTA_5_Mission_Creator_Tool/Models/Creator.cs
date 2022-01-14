@@ -13,6 +13,9 @@ namespace GTA_5_Mission_Creator_Tool.Models
 	{
 		public static PS3API PS3 { get; set; }
 
+		private const uint LiR3_0 = 0x38600000;
+		private const uint LiR3_1 = 0x38600001;
+
 		private static uint TypeAddress => PS3.Extension.ReadUInt32(0x01CBA468) + 0x68C8;
 
 		public static string Title
@@ -29,8 +32,20 @@ namespace GTA_5_Mission_Creator_Tool.Models
 
 		public static bool BypassNoConnection
 		{
-			get => PS3.Extension.ReadUInt32(0x011BB388) == 0x38600001;
-			set => PS3.Extension.WriteUInt32(0x011BB388, (value ? 0x38600001u : 0x63E30000));
+			get => PS3.Extension.ReadUInt32(0x011BB388) == LiR3_1;
+			set => PS3.Extension.WriteUInt32(0x011BB388, (value ? LiR3_1 : 0x63E30000));
+		}
+
+		public static bool RockstarDev
+		{
+			get => PS3.Extension.ReadUInt32(0x39BC78) == 0x38600001;
+			set => PS3.Extension.WriteUInt32(0x39BC78, (value ? LiR3_1 : LiR3_0));
+		}
+
+		public static void IsCloudAvailable(bool patched)
+		{
+			PS3.Extension.WriteUInt32(0x011BB358, patched ? LiR3_1 : LiR3_0);
+			PS3.Extension.WriteUInt32(0x011BB388, patched ? LiR3_1 : 0x63E30000);
 		}
 
 		public static bool LoadScript(string scriptName, uint stackSize = 15000)
@@ -68,19 +83,22 @@ namespace GTA_5_Mission_Creator_Tool.Models
 			return true;
 		}
 
-		public static void TerminateScript()
+		public static bool TerminateScript(string scriptName)
 		{
+			if (RPC.Call(Natives.SCRIPT_DOES_SCRIPT_EXIST, scriptName) != 1)
+			{
+				return false;
+			}
 
-		}
+			RPC.Call(Natives.GAMEPLAY_TERMINATE_ALL_SCRIPTS_WITH_THIS_NAME, scriptName);
 
-		public static string GetMetaJson()
-		{
-			return "";
+			return true;
 		}
 
 		public static string GetContentJson()
 		{
-			return "";
+			uint jsonLocation = PS3.Extension.ReadUInt32(0x1003FFDC);
+			return PS3.Extension.ReadString(jsonLocation);
 		}
 	}
 }

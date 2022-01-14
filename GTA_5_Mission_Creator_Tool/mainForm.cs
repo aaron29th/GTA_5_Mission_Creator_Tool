@@ -24,6 +24,7 @@ namespace GTA_5_Mission_Creator_Tool
 
 			Creator.PS3 = PS3;
 			RPC.PS3 = PS3;
+			ContentIntercepter.PS3 = PS3;
 		}
 
 		private void connectBtn_Click(object sender, EventArgs e)
@@ -47,8 +48,19 @@ namespace GTA_5_Mission_Creator_Tool
 			}
 
 			Output.Write("Attached");
+
 			RPC.Enable();
 			Output.Write("RPC enabled");
+
+			
+		}
+
+		private void interceptionEnableBtn_Click(object sender, EventArgs e)
+		{
+			ContentIntercepter.Enable();
+			Output.Write("Save interception enabled");
+
+			devModeCheck.Checked = true;
 		}
 
 		private void loadMissionCreatorBtn_Click(object sender, EventArgs e)
@@ -69,9 +81,29 @@ namespace GTA_5_Mission_Creator_Tool
 			else Output.Write("Deathmatch creator failed to load");
 		}
 
-		private void bypassIsCloudAvailableCheck_CheckedChanged(object sender, EventArgs e)
+		private void devModeCheck_CheckedChanged(object sender, EventArgs e)
 		{
-			Creator.BypassNoConnection = bypassIsCloudAvailableCheck.Checked;
+			Creator.RockstarDev = devModeCheck.Checked;
+		}
+
+		private void terminateScript(string scriptName)
+		{
+			if (!Creator.TerminateScript(scriptName)) Output.Write($"Script termination failed: {scriptName}");
+			else Output.Write($"Script termination succeeded: {scriptName}");
+		}
+
+		private void terminateCreatorScriptsBtn_Click(object sender, EventArgs e)
+		{
+			terminateScript("FM_Mission_Creator");
+			terminateScript("FM_Race_Creator");
+			terminateScript("FM_Deathmatch_Creator");
+			terminateScript("creator");
+		}
+
+		private void terminateScriptBtn_Click(object sender, EventArgs e)
+		{
+			terminateScript(scriptNameTextbox.Text);
+			
 		}
 	}
 }

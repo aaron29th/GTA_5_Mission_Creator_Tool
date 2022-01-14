@@ -70,8 +70,8 @@ namespace GTA_5_Mission_Creator_Tool.Models
 	        if (from > to)
                 return 0x4C000000 - (from - to);
 	        
-	        if (@from < to)
-		        return to - @from + 0x48000000;
+	        if (from < to)
+		        return to - from + 0x48000000;
 	        
 	        return 0x48000000;
         }
@@ -83,7 +83,7 @@ namespace GTA_5_Mission_Creator_Tool.Models
 	        uint hookFunctionExit = hookFunctionEntry + (uint)hookData.Length + 4;
 
 	        // Hook is player online native
-	        const uint hookJumpFrom = 0x396D00;
+	        const uint hookJumpFrom = (uint)Natives.PLAYER_IS_PLAYER_ONLINE;
 	        const uint hookReturnTo = hookJumpFrom + 4;
 
             // Check if already enabled
