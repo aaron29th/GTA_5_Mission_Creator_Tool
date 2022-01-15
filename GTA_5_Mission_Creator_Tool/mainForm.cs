@@ -55,6 +55,8 @@ namespace GTA_5_Mission_Creator_Tool
 
 			RPC.Enable();
 			Output.Write("RPC enabled");
+
+			Output.Write($"Address of type = Global_181A32 = 0x{Creator.TypeAddress:X}");
 		}
 
 		private void interceptionEnableBtn_Click(object sender, EventArgs e)

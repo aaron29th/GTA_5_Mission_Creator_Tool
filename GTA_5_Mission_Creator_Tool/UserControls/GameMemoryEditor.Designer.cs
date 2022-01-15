@@ -38,8 +38,20 @@
 			this.titleTextbox = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.typeSpin = new System.Windows.Forms.NumericUpDown();
+			this.typeGetBtn = new System.Windows.Forms.Button();
+			this.typeSetBtn = new System.Windows.Forms.Button();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.subtypeGetBtn = new System.Windows.Forms.Button();
+			this.subtypeSetBtn = new System.Windows.Forms.Button();
+			this.subtypeSpin = new System.Windows.Forms.NumericUpDown();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
+			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.typeSpin)).BeginInit();
+			this.groupBox2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.subtypeSpin)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// descriptionSetBtn
@@ -67,7 +79,7 @@
 			// titleSetBtn
 			// 
 			this.titleSetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.titleSetBtn.Location = new System.Drawing.Point(588, 14);
+			this.titleSetBtn.Location = new System.Drawing.Point(260, 14);
 			this.titleSetBtn.Name = "titleSetBtn";
 			this.titleSetBtn.Size = new System.Drawing.Size(41, 23);
 			this.titleSetBtn.TabIndex = 21;
@@ -78,7 +90,7 @@
 			// titleGetBtn
 			// 
 			this.titleGetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.titleGetBtn.Location = new System.Drawing.Point(541, 14);
+			this.titleGetBtn.Location = new System.Drawing.Point(213, 14);
 			this.titleGetBtn.Name = "titleGetBtn";
 			this.titleGetBtn.Size = new System.Drawing.Size(41, 23);
 			this.titleGetBtn.TabIndex = 20;
@@ -121,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.titleTextbox.Location = new System.Drawing.Point(6, 16);
 			this.titleTextbox.Name = "titleTextbox";
-			this.titleTextbox.Size = new System.Drawing.Size(529, 20);
+			this.titleTextbox.Size = new System.Drawing.Size(201, 20);
 			this.titleTextbox.TabIndex = 17;
 			this.titleTextbox.Text = "Example title";
 			// 
@@ -135,7 +147,7 @@
 			this.panel1.Controls.Add(this.titleSetBtn);
 			this.panel1.Location = new System.Drawing.Point(3, 3);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(632, 44);
+			this.panel1.Size = new System.Drawing.Size(304, 44);
 			this.panel1.TabIndex = 24;
 			// 
 			// panel2
@@ -151,10 +163,92 @@
 			this.panel2.Size = new System.Drawing.Size(632, 91);
 			this.panel2.TabIndex = 25;
 			// 
+			// groupBox1
+			// 
+			this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox1.Controls.Add(this.typeGetBtn);
+			this.groupBox1.Controls.Add(this.typeSetBtn);
+			this.groupBox1.Controls.Add(this.typeSpin);
+			this.groupBox1.Location = new System.Drawing.Point(313, 3);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(161, 44);
+			this.groupBox1.TabIndex = 27;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Type";
+			// 
+			// typeSpin
+			// 
+			this.typeSpin.Location = new System.Drawing.Point(6, 17);
+			this.typeSpin.Name = "typeSpin";
+			this.typeSpin.Size = new System.Drawing.Size(53, 20);
+			this.typeSpin.TabIndex = 26;
+			// 
+			// typeGetBtn
+			// 
+			this.typeGetBtn.Location = new System.Drawing.Point(65, 14);
+			this.typeGetBtn.Name = "typeGetBtn";
+			this.typeGetBtn.Size = new System.Drawing.Size(41, 23);
+			this.typeGetBtn.TabIndex = 22;
+			this.typeGetBtn.Text = "Get";
+			this.typeGetBtn.UseVisualStyleBackColor = true;
+			this.typeGetBtn.Click += new System.EventHandler(this.typeGetBtn_Click);
+			// 
+			// typeSetBtn
+			// 
+			this.typeSetBtn.Location = new System.Drawing.Point(112, 14);
+			this.typeSetBtn.Name = "typeSetBtn";
+			this.typeSetBtn.Size = new System.Drawing.Size(41, 23);
+			this.typeSetBtn.TabIndex = 23;
+			this.typeSetBtn.Text = "Set";
+			this.typeSetBtn.UseVisualStyleBackColor = true;
+			this.typeSetBtn.Click += new System.EventHandler(this.typeSetBtn_Click);
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox2.Controls.Add(this.subtypeGetBtn);
+			this.groupBox2.Controls.Add(this.subtypeSetBtn);
+			this.groupBox2.Controls.Add(this.subtypeSpin);
+			this.groupBox2.Location = new System.Drawing.Point(474, 3);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(161, 44);
+			this.groupBox2.TabIndex = 28;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Subtype";
+			// 
+			// subtypeGetBtn
+			// 
+			this.subtypeGetBtn.Location = new System.Drawing.Point(65, 14);
+			this.subtypeGetBtn.Name = "subtypeGetBtn";
+			this.subtypeGetBtn.Size = new System.Drawing.Size(41, 23);
+			this.subtypeGetBtn.TabIndex = 22;
+			this.subtypeGetBtn.Text = "Get";
+			this.subtypeGetBtn.UseVisualStyleBackColor = true;
+			this.subtypeGetBtn.Click += new System.EventHandler(this.subtypeGetBtn_Click);
+			// 
+			// subtypeSetBtn
+			// 
+			this.subtypeSetBtn.Location = new System.Drawing.Point(112, 14);
+			this.subtypeSetBtn.Name = "subtypeSetBtn";
+			this.subtypeSetBtn.Size = new System.Drawing.Size(41, 23);
+			this.subtypeSetBtn.TabIndex = 23;
+			this.subtypeSetBtn.Text = "Set";
+			this.subtypeSetBtn.UseVisualStyleBackColor = true;
+			this.subtypeSetBtn.Click += new System.EventHandler(this.subtypeSetBtn_Click);
+			// 
+			// subtypeSpin
+			// 
+			this.subtypeSpin.Location = new System.Drawing.Point(6, 17);
+			this.subtypeSpin.Name = "subtypeSpin";
+			this.subtypeSpin.Size = new System.Drawing.Size(53, 20);
+			this.subtypeSpin.TabIndex = 26;
+			// 
 			// GameMemoryEditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.groupBox2);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Name = "GameMemoryEditor";
@@ -163,6 +257,10 @@
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.typeSpin)).EndInit();
+			this.groupBox2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.subtypeSpin)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -179,5 +277,13 @@
 		private System.Windows.Forms.TextBox titleTextbox;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Button typeGetBtn;
+		private System.Windows.Forms.Button typeSetBtn;
+		private System.Windows.Forms.NumericUpDown typeSpin;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.Button subtypeGetBtn;
+		private System.Windows.Forms.Button subtypeSetBtn;
+		private System.Windows.Forms.NumericUpDown subtypeSpin;
 	}
 }

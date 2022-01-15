@@ -37,5 +37,25 @@ namespace GTA_5_Mission_Creator_Tool.UserControls
 		{
 			Creator.Description = descriptionTextbox.Text;
 		}
+
+		private void typeGetBtn_Click(object sender, EventArgs e)
+		{
+			typeSpin.Value = Creator.Type;
+		}
+
+		private void typeSetBtn_Click(object sender, EventArgs e)
+		{
+			Creator.Type = (uint)typeSpin.Value;
+		}
+
+		private void subtypeGetBtn_Click(object sender, EventArgs e)
+		{
+			subtypeSpin.Value = Creator.Subtype;
+		}
+
+		private void subtypeSetBtn_Click(object sender, EventArgs e)
+		{
+			Creator.Subtype = (uint)subtypeSpin.Value;
+		}
 	}
 }

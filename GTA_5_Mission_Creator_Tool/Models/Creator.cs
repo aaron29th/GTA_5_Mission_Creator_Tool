@@ -16,7 +16,19 @@ namespace GTA_5_Mission_Creator_Tool.Models
 		private const uint LiR3_0 = 0x38600000;
 		private const uint LiR3_1 = 0x38600001;
 
-		private static uint TypeAddress => PS3.Extension.ReadUInt32(0x01CBA468) + 0x68C8;
+		public static uint TypeAddress => PS3.Extension.ReadUInt32(0x01CBA468) + 0x68C8;
+
+		public static uint Type
+		{
+			get => PS3.Extension.ReadUInt32(TypeAddress);
+			set => PS3.Extension.WriteUInt32(TypeAddress, value);
+		}
+
+		public static uint Subtype
+		{
+			get => PS3.Extension.ReadUInt32(TypeAddress + 0x4);
+			set => PS3.Extension.WriteUInt32(TypeAddress + 0x4, value);
+		}
 
 		public static string Title
 		{
