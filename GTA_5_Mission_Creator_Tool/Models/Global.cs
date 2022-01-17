@@ -28,7 +28,7 @@ namespace GTA_5_Mission_Creator_Tool.Models
         public static uint getPtr(string address)
         {
             // Check address in globals format
-            string correctFormatPattern = @"^(Global_)([A-Fa-f0-9]+)((\.|->)f_([A-Fa-f0-9]+))*$";
+            string correctFormatPattern = @"^(Global_)([A-Fa-f0-9]+)((\.|->)f_([A-Fa-f0-9]+)(|\[[0-9]+\]))*$";
             if (!Regex.IsMatch(address, correctFormatPattern))
                 return 0;
 
@@ -41,10 +41,14 @@ namespace GTA_5_Mission_Creator_Tool.Models
 
             // Get offset from global index
             uint fSum = 0;
-            Regex fValuesRgx = new Regex(@"f_([A-Fa-f0-9]+)");
+            Regex fValuesRgx = new Regex(@"f_([A-Fa-f0-9]+)(\[([0-9]+)\]|)");
             foreach (Match m in fValuesRgx.Matches(address))
             {
-                fSum += Convert.ToUInt32(m.Groups[1].Value, 16);
+                uint arrPos = 0;
+                if (!string.IsNullOrEmpty(m.Groups[3].Value))
+                    arrPos = Convert.ToUInt32(m.Groups[3].Value, 10);
+
+                fSum += Convert.ToUInt32(m.Groups[1].Value, 16) * (arrPos + 1);
             }
 
             return getPtr(globalIndex, fSum);
