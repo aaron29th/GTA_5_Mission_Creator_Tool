@@ -40,7 +40,7 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PS3Lib">
-      <HintPath>D:\Users\1\Desktop\PS3\CCAPI\PS3Lib.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Mods\PS3\Dlls\PS3Lib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,6 +69,18 @@
     <Compile Include="Models\Update.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\BitSetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BitSetControl.Designer.cs">
+      <DependentUpon>BitSetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ConnectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ConnectionControl.Designer.cs">
+      <DependentUpon>ConnectionControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\GameMemoryEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +111,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\BitSetControl.resx">
+      <DependentUpon>BitSetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ConnectionControl.resx">
+      <DependentUpon>ConnectionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\GameMemoryEditor.resx">
       <DependentUpon>GameMemoryEditor.cs</DependentUpon>
     </EmbeddedResource>
