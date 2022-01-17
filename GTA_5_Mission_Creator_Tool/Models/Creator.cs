@@ -11,7 +11,7 @@ namespace GTA_5_Mission_Creator_Tool.Models
 {
 	public static class Creator
 	{
-		public static PS3API PS3 { get; set; }
+		public static PS3API PS3 { get; set; } = null;
 
 		private const uint LiR3_0 = 0x38600000;
 		private const uint LiR3_1 = 0x38600001;
@@ -70,53 +70,6 @@ namespace GTA_5_Mission_Creator_Tool.Models
 
 			// SOCIALCLUB::SC_PROFANITY_GET_STRING_PASSED
 			PS3.Extension.WriteUInt32(0x3E3894, patched ? LiR3_1 : 0x5463DFFE);
-		}
-
-		public static bool LoadScript(string scriptName, uint stackSize = 15000)
-		{
-			uint aPointer = 0x10041F88;
-			uint bPointer = 0x10041FB0;
-			uint cPointer = 0x10041FD8;
-
-			// A = &B
-			PS3.Extension.WriteUInt32(aPointer, bPointer);
-			PS3.Extension.WriteUInt32(aPointer + 0x4, 0x2);
-			PS3.Extension.WriteUInt32(aPointer + 0x8, bPointer);
-
-			// B = &C
-			PS3.Extension.WriteUInt32(bPointer, cPointer);
-			PS3.Extension.WriteUInt32(bPointer + 0x4, stackSize);
-
-			// C
-			PS3.Extension.WriteString(cPointer, scriptName);
-
-			if (RPC.Call(Natives.SCRIPT_DOES_SCRIPT_EXIST, scriptName) != 1)
-			{
-				return false;
-			}
-
-			RPC.Call(Natives.SCRIPT_REQUEST_SCRIPT, scriptName);
-			Thread.Sleep(500);
-			if (RPC.Call(Natives.SCRIPT_HAS_SCRIPT_LOADED, scriptName) == 1)
-			{
-				//Thread.Sleep(1000);
-				RPC.Call(Natives.SYSTEM_START_NEW_SCRIPT, aPointer);
-				RPC.Call(Natives.SCRIPT_SET_SCRIPT_AS_NO_LONGER_NEEDED, scriptName);
-			}
-
-			return true;
-		}
-
-		public static bool TerminateScript(string scriptName)
-		{
-			if (RPC.Call(Natives.SCRIPT_DOES_SCRIPT_EXIST, scriptName) != 1)
-			{
-				return false;
-			}
-
-			RPC.Call(Natives.GAMEPLAY_TERMINATE_ALL_SCRIPTS_WITH_THIS_NAME, scriptName);
-
-			return true;
 		}
 
 		public static string GetContentJson()

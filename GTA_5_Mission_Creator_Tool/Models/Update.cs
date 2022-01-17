@@ -16,8 +16,8 @@ namespace GTA_5_Mission_Creator_Tool.Models
 
 		private const string VersionCheckHost = "aaronrosser.xyz";
 		private const string VersionCheckPath = "/projects/GTA5/PS3/GTA_5_Mission_Creator_Tool.json";
-		public const int Version = 102;
-		public const string VersionStr = "1.02";
+		public const int Version = 103;
+		public const string VersionStr = "1.03";
 
 		public static Updates CheckUpdates()
 		{

@@ -22,10 +22,15 @@ namespace GTA_5_Mission_Creator_Tool
 
 			Output.outputBox = outputBox;
 
-			Creator.PS3 = PS3;
 			RPC.PS3 = PS3;
 			ContentIntercepter.PS3 = PS3;
-			//ContentIntercepter.PS3 = PS3;
+
+			Scripts.PS3 = PS3;
+			Global.PS3 = PS3;
+			Creator.PS3 = PS3;
+			
+			connectionControl.PS3 = PS3;
+			gameMemoryEditor.PS3 = PS3;
 		}
 
 		private void mainForm_Load(object sender, EventArgs e)

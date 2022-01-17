@@ -14,7 +14,7 @@ namespace GTA_5_Mission_Creator_Tool.UserControls
 {
 	public partial class ConnectionControl : UserControl
 	{
-		private static PS3API PS3 = new PS3API();
+		public PS3API PS3 { get; set; } = null;
 
 		public ConnectionControl()
 		{
@@ -67,7 +67,7 @@ namespace GTA_5_Mission_Creator_Tool.UserControls
 
 		private void terminateScript(string scriptName)
 		{
-			if (!Creator.TerminateScript(scriptName)) Output.Write($"Script termination failed: {scriptName}");
+			if (!Scripts.Terminate(scriptName)) Output.Write($"Script termination failed: {scriptName}");
 			else Output.Write($"Script termination succeeded: {scriptName}");
 		}
 
@@ -86,24 +86,24 @@ namespace GTA_5_Mission_Creator_Tool.UserControls
 
 		private void startScriptBtn_Click(object sender, EventArgs e)
 		{
-
+			Scripts.Load(scriptNameTextbox.Text, (uint)stackSizeSpin.Value);
 		}
 
 		private void loadMissionCreatorBtn_Click(object sender, EventArgs e)
 		{
-			if (Creator.LoadScript("FM_Mission_Creator")) Output.Write("Mission creator successfully loaded");
+			if (Scripts.Load("FM_Mission_Creator")) Output.Write("Mission creator successfully loaded");
 			else Output.Write("Mission creator failed to load");
 		}
 
 		private void loadRaceCreatorBtn_Click(object sender, EventArgs e)
 		{
-			if (Creator.LoadScript("FM_Race_Creator")) Output.Write("Race creator successfully loaded");
+			if (Scripts.Load("FM_Race_Creator")) Output.Write("Race creator successfully loaded");
 			else Output.Write("Race creator failed to load");
 		}
 
 		private void loadDeathmatchCreatorBtn_Click(object sender, EventArgs e)
 		{
-			if (Creator.LoadScript("FM_Deathmatch_Creator")) Output.Write("Deathmatch  creator successfully loaded");
+			if (Scripts.Load("FM_Deathmatch_Creator")) Output.Write("Deathmatch  creator successfully loaded");
 			else Output.Write("Deathmatch creator failed to load");
 		}
 
@@ -118,5 +118,11 @@ namespace GTA_5_Mission_Creator_Tool.UserControls
 			Creator.BypassProfanityCheck(profanityBypassCheck.Checked);
 			Output.Write("Profanity check: " + (profanityBypassCheck.Checked ? "Disabled" : "Enabled"));
 		}
-	}
+
+        private void scriptGetNumInstancesBtn_Click(object sender, EventArgs e)
+        {
+			int numInstances = Scripts.GetNumberOfRunningInstances(scriptNameTextbox.Text);
+			Output.Write($"Number of instances of {scriptNameTextbox.Text} running: {numInstances}");
+        }
+    }
 }
