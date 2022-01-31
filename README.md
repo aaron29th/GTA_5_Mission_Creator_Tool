@@ -1,5 +1,5 @@
 # GTA_5_Mission_Creator_Tool
-A tool that allows access to the original mission creator and the JSON files it creates, showcased here \
+A tool that allows access to the original unreleased mission creator and the JSON files it creates, showcased here \
 https://www.youtube.com/watch?v=TdGU2yg6sr8 \
 https://www.youtube.com/watch?v=GUT1DTRTvhQ
 
